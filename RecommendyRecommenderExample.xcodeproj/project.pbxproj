@@ -13,6 +13,7 @@
 		0DB9E4DB1C1447970026644F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9E4DA1C1447970026644F /* Assets.xcassets */; };
 		0DB9E4DE1C1447970026644F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9E4DC1C1447970026644F /* LaunchScreen.storyboard */; };
 		0DB9E4E91C1447970026644F /* RecommendyRecommenderExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9E4E81C1447970026644F /* RecommendyRecommenderExampleTests.swift */; };
+		0DB9E4F51C1448530026644F /* CollabFiltering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9E4F41C1448530026644F /* CollabFiltering.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		0DB9E4E41C1447970026644F /* RecommendyRecommenderExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecommendyRecommenderExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB9E4E81C1447970026644F /* RecommendyRecommenderExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendyRecommenderExampleTests.swift; sourceTree = "<group>"; };
 		0DB9E4EA1C1447970026644F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DB9E4F41C1448530026644F /* CollabFiltering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollabFiltering.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		0DB9E4C71C1447970026644F = {
 			isa = PBXGroup;
 			children = (
+				0DB9E4F31C1448270026644F /* RecommendyRecommender */,
 				0DB9E4D21C1447970026644F /* RecommendyRecommenderExample */,
 				0DB9E4E71C1447970026644F /* RecommendyRecommenderExampleTests */,
 				0DB9E4D11C1447970026644F /* Products */,
@@ -94,6 +97,14 @@
 				0DB9E4EA1C1447970026644F /* Info.plist */,
 			);
 			path = RecommendyRecommenderExampleTests;
+			sourceTree = "<group>";
+		};
+		0DB9E4F31C1448270026644F /* RecommendyRecommender */ = {
+			isa = PBXGroup;
+			children = (
+				0DB9E4F41C1448530026644F /* CollabFiltering.swift */,
+			);
+			path = RecommendyRecommender;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DB9E4F51C1448530026644F /* CollabFiltering.swift in Sources */,
 				0DB9E4D61C1447970026644F /* ViewController.swift in Sources */,
 				0DB9E4D41C1447970026644F /* AppDelegate.swift in Sources */,
 			);

@@ -33,4 +33,65 @@ class RecommendyRecommenderExampleTests: XCTestCase {
         }
     }
     
+    func testCourseraExample() {
+        let ratings: [[Double]] = [
+            [ 5, 5, 0, 0],
+            [ 5,-1,-1, 0],
+            [-1, 4, 0,-1],
+            [ 0, 0, 5, 4],
+            [ 0, 0, 5,-1],
+        ]
+        
+        collabFiltering(ratings)
+    }
+    
+    func testSimilarToCoursera() {
+        let ratings: [[Double]] = [
+            [ 5, 5, 0, 0],
+            [ 5, 5, 0, 0],
+            [ 5, 4, 0, 0],
+            [ 0, 0, 5, 5],
+            [ 0, 0, 5, 5],
+        ]
+        
+        collabFiltering(ratings)
+    }
+
+    func testInsuficcientFeatures() {
+        let ratings: [[Double]] = [
+            [ 1, 0, 0, 0],
+            [ 0, 1, 0, 0],
+            [ 0, 0, 1, 0],
+            [ 0, 0, 0, 1],
+            [ 0, 0, 0, 1],
+        ]
+        
+        collabFiltering(ratings)
+    }
+    
+    func collabFiltering(ratings: [[Double]]) {
+        let isRatingPresent = ratings.map({$0.map({$0 != Double(-1)}) })
+        print(isRatingPresent)
+        
+        let cf = CollabFiltering(
+            numProducts: 5,
+            numUsers: 4,
+            numFeatures: 2,
+            ratings: ratings,
+            isRatingPresent: isRatingPresent,
+            alpha: 0.001)
+        cf.descend(Double(1), iterations:1000)
+        
+        print("cf.featuresOfProducts")
+        print(cf.featuresOfProducts)
+        
+        print("cf.userPreferenceForFeatures")
+        print(cf.userPreferenceForFeatures)
+
+        print("cf.ratingPredictions()")
+        let predictions = cf.ratingPredictions()
+        for p in predictions {
+            print(p)
+        }
+    }
 }
